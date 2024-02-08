@@ -1,5 +1,5 @@
 node_modules
 .serverless
 .prettierrc
-.vscode
 .env
+.vscode
