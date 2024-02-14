@@ -4,8 +4,8 @@ import env from 'dotenv';
 import bodyParser from 'body-parser';
 import Logging from './logging/Logging.js';
 import { apiRoutes } from './routes/weather.js';
-
-import { conn, run } from './functions/tomongo.js';
+import cors from 'cors';
+import { conn, run } from './v1/functions/tomongo.js';
 let app = express();
 
 const L = new Logging();
@@ -28,6 +28,7 @@ app.use((req, res, next) => {
     });
     next();
 });
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 

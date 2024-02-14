@@ -2,11 +2,11 @@ service: weather
 frameworkVersion: '3'
 
 provider:
-  name: aws
-  runtime: nodejs18.x
+    name: aws
+    runtime: nodejs20.x
 
 functions:
-  api:
-    handler: index.handler
-    events:
-      - httpApi: '*'
+    api:
+        handler: index.handler
+        events:
+            - httpApi: '*'
